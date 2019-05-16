@@ -1,0 +1,33 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+
+    ################ set up laser data ################
+    <include file="$(find ugv_navigation)/launch/velodyne.launch"/>
+
+    <!--################ publish an example base_link -> laser transform ################
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0.1 0 0 -1.28 0 0 /base_link /velodyne 100" />-->
+
+
+    <include file="$(find ugv_navigation)/launch/ugvdriver.launch">
+	<arg name="pub_base_odom_transform" value="true"/>
+    </include>
+
+    <include file="$(find ugv_navigation)/launch/path.launch">
+        <arg name="fixed_frame" value="odom"/>
+        <arg name="use_odom" value="true"/>
+    </include>
+
+    <!--################ start the laser scan_matcher ################
+    <node pkg="laser_scan_matcher" type="laser_scan_matcher_node" name="laser_scan_matcher_node" output="screen">
+	<param name="use_imu" value = "true"/>
+	<remap from="imu/data" to="imu"/>
+	<param name="use_odom" value = "true"/>
+	<param name="fixed_frame" value = "odom"/>
+	<param name="max_iterations" value="10"/>
+	<param name="publish_pose_stamped" value="true"/>
+	<remap from="pose_stamped" to="pose"/>
+    </node>-->
+
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find ugv_navigation)/rviz/odometry.rviz" />
+
+</launch>

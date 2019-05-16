@@ -1,0 +1,15 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+
+    <node pkg="uav_detection" type="targetdetect_node" name="targetdetect_node" output="screen">
+        <param name="serial_port" value="/dev/ttyUSB0"/>
+        <param name="serial_baudrate" value="115200"/>
+        <param name="Config_File" value="$(find uav_detection)/params/detector_params.yml"/>
+        <param name="Param_File" value="$(find uav_detection)/params/calibresult.txt"/>
+        <param name="Video_SaveFile" value="$(find uav_detection)/result/result.avi"/>
+        <param name="showimage" value="true"/>
+        <param name="showresult" value="true"/>
+        <param name="savevedio" value="false"/>
+    </node>
+
+</launch>

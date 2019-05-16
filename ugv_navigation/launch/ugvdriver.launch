@@ -1,0 +1,22 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+
+    <arg name="pub_base_odom_transform" default="true"/>
+    <arg name="serial_port" default="/dev/ttyUSB1"/>
+    <arg name="serial_baudrate" default="115200"/>
+    <arg name="odom_rate" default="10"/>
+    <arg name="base_frame" default="base_link"/>
+    <arg name="odom_frame" default="odom"/>
+
+    <node pkg="ugv_navigation" type="ugvdriver_node" name="ugvdriver_node" output="screen">
+        <param name="pub_base_odom_transform" value="$(arg pub_base_odom_transform)"/>
+        <param name="serial_port" value="$(arg serial_port)"/>
+        <param name="serial_baudrate" value="$(arg serial_baudrate)"/>
+        <param name="odom_rate" value="$(arg odom_rate)"/>
+        <param name="base_frame" value="$(arg base_frame)"/>
+        <param name="odom_frame" value="$(arg odom_frame)"/>
+
+        <rosparam file="$(find ugv_navigation)/params/ugvdriver/ugvdriver_params.yaml" />
+    </node>
+
+</launch>

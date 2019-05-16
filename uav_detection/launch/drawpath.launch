@@ -1,0 +1,24 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+
+    ################ arguments ################
+    <arg name="sim" default="true" />
+
+    ################ set up odom data ################
+    <group if="$(arg sim)">
+        <param name="/use_sim_time" value="true"/>
+        <node pkg="rosbag" type="play" name="play" args="$(find uav_detection)/bags/localposition-002.bag --clock"/>
+    </group>
+    <group unless="$(arg sim)">
+        <include file="$(find uav_detection)/launch/uav_detection.launch"/>
+    </group>
+
+    ################ draw path ################
+    <node pkg="uav_detection" type="drawpath_node" name="drawpath_node" output="screen">
+        <param name="fixed_frame" value="odom"/>
+    </node>
+
+    ################ start rviz ################
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find uav_detection)/rviz/path.rviz" />
+
+</launch>

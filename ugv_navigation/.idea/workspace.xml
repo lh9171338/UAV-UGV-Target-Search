@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="092ecf7b-21ce-4093-bb41-3f7f4acc3e28" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ugvdriver.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4123">
+              <caret line="217" column="6" selection-start-line="217" selection-start-column="6" selection-end-line="217" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/goal_test_node.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/ugvdriver.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1140">
+              <caret line="60" column="14" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/coordinatetransform.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="15" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/kbdctrl_node.cpp" />
+        <option value="$PROJECT_DIR$/src/ugvnavigation_node.cpp" />
+        <option value="$PROJECT_DIR$/src/odom_test_node.cpp" />
+        <option value="$PROJECT_DIR$/launch/move_base.launch" />
+        <option value="$PROJECT_DIR$/launch/amcl.launch" />
+        <option value="$PROJECT_DIR$/params/ugvnavigation_params.yaml" />
+        <option value="$PROJECT_DIR$/include/ugvnavigation.h" />
+        <option value="$PROJECT_DIR$/src/ugvnavigation.cpp" />
+        <option value="$PROJECT_DIR$/launch/velodyne.launch" />
+        <option value="$PROJECT_DIR$/launch/system.launch" />
+        <option value="$PROJECT_DIR$/launch/ugvnavigation.launch" />
+        <option value="$PROJECT_DIR$/launch/path.launch" />
+        <option value="$PROJECT_DIR$/src/keyboardcontrol_node.cpp" />
+        <option value="$PROJECT_DIR$/params/ugvdriver_params.yaml" />
+        <option value="$PROJECT_DIR$/launch/keyboardcontrol.launch" />
+        <option value="$PROJECT_DIR$/launch/odometer.launch" />
+        <option value="$PROJECT_DIR$/src/path_node.cpp" />
+        <option value="$PROJECT_DIR$/include/sendgoal.h" />
+        <option value="$PROJECT_DIR$/src/ugvdriver_node.cpp" />
+        <option value="$PROJECT_DIR$/include/targetposition.h" />
+        <option value="$PROJECT_DIR$/src/targetposition_node.cpp" />
+        <option value="$PROJECT_DIR$/src/targetposition.cpp" />
+        <option value="$PROJECT_DIR$/launch/goal_test.launch" />
+        <option value="$PROJECT_DIR$/include/recvtarget.h" />
+        <option value="$PROJECT_DIR$/include/sendtarget.h" />
+        <option value="$PROJECT_DIR$/src/recvtarget_node.cpp" />
+        <option value="$PROJECT_DIR$/src/sendtarget_node.cpp" />
+        <option value="$PROJECT_DIR$/launch/ugvdriver.launch" />
+        <option value="$PROJECT_DIR$/include/serialtransmission.h" />
+        <option value="$PROJECT_DIR$/src/serialtransmission.cpp" />
+        <option value="$PROJECT_DIR$/launch/sendtarget.launch" />
+        <option value="$PROJECT_DIR$/launch/recvtarget.launch" />
+        <option value="$PROJECT_DIR$/src/recvtarget.cpp" />
+        <option value="$PROJECT_DIR$/src/sendtarget.cpp" />
+        <option value="$PROJECT_DIR$/launch/slam_navigation.launch" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/params/ugvdriver/ugvdriver_params.yaml" />
+        <option value="$PROJECT_DIR$/include/ugvdriver.h" />
+        <option value="$PROJECT_DIR$/src/ugvdriver.cpp" />
+        <option value="$PROJECT_DIR$/src/goal_test_node.cpp" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="228" />
+    <option name="y" value="444" />
+    <option name="width" value="1529" />
+    <option name="height" value="880" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ugv_navigation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ugv_navigation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ugv_navigation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ugv_navigation" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ugv_navigation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ugv_navigation" type="462c0819:PsiDirectoryNode" />
+              <item name="launch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ugv_navigation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ugv_navigation" type="462c0819:PsiDirectoryNode" />
+              <item name="params" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ugv_navigation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ugv_navigation" type="462c0819:PsiDirectoryNode" />
+              <item name="params" type="462c0819:PsiDirectoryNode" />
+              <item name="ugvdriver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ugv_navigation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ugv_navigation" type="462c0819:PsiDirectoryNode" />
+              <item name="rviz" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ugv_navigation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ugv_navigation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/workspace/opencv/video_process" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="092ecf7b-21ce-4093-bb41-3f7f4acc3e28" name="Default Changelist" comment="" />
+      <created>1553694337546</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1553694337546</updated>
+      <workItem from="1553694338927" duration="2163000" />
+      <workItem from="1553750163651" duration="9033000" />
+      <workItem from="1553765622260" duration="2003000" />
+      <workItem from="1553774751261" duration="578000" />
+      <workItem from="1553823962600" duration="4979000" />
+      <workItem from="1553830478658" duration="15798000" />
+      <workItem from="1553925246014" duration="229000" />
+      <workItem from="1553925591108" duration="662000" />
+      <workItem from="1553926352834" duration="8465000" />
+      <workItem from="1554012989509" duration="8974000" />
+      <workItem from="1554085623365" duration="1674000" />
+      <workItem from="1554107618537" duration="804000" />
+      <workItem from="1554131940109" duration="1410000" />
+      <workItem from="1554191282151" duration="697000" />
+      <workItem from="1554259416145" duration="1735000" />
+      <workItem from="1554277158737" duration="1710000" />
+      <workItem from="1554284544466" duration="4920000" />
+      <workItem from="1554293800423" duration="3836000" />
+      <workItem from="1554342347316" duration="879000" />
+      <workItem from="1554345941301" duration="1042000" />
+      <workItem from="1554347350478" duration="782000" />
+      <workItem from="1554348591643" duration="2894000" />
+      <workItem from="1554367980891" duration="23195000" />
+      <workItem from="1554516877256" duration="11446000" />
+      <workItem from="1554531274189" duration="204000" />
+      <workItem from="1554536034368" duration="613000" />
+      <workItem from="1554537057560" duration="1776000" />
+      <workItem from="1554539037603" duration="1237000" />
+      <workItem from="1554602388630" duration="12542000" />
+      <workItem from="1554617751224" duration="4231000" />
+      <workItem from="1556711767620" duration="553000" />
+      <workItem from="1556700683482" duration="3902000" />
+      <workItem from="1557377665925" duration="671000" />
+      <workItem from="1557407665126" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="140335000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18705036" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="CMake" order="11" visible="true" weight="0.24112734" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23962368" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="CMake" order="11" visible="true" weight="0.24112734" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/kbdctrl_node.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/ugvnavigation_node.cpp" />
+    <entry file="file://$PROJECT_DIR$/launch/move_base.launch" />
+    <entry file="file://$PROJECT_DIR$/params/ugvnavigation_params.yaml" />
+    <entry file="file://$PROJECT_DIR$/src/ugvnavigation.cpp" />
+    <entry file="file://$PROJECT_DIR$/include/ugvnavigation.h" />
+    <entry file="file://$PROJECT_DIR$/launch/system.launch" />
+    <entry file="file://$PROJECT_DIR$/src/odom_test_node.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="52" column="46" lean-forward="true" selection-start-line="52" selection-start-column="46" selection-end-line="52" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/keyboardcontrol_node.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="634">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/params/ugvdriver_params.yaml" />
+    <entry file="file://$PROJECT_DIR$/launch/amcl.launch" />
+    <entry file="file://$PROJECT_DIR$/launch/ugvnavigation.launch" />
+    <entry file="file://$PROJECT_DIR$/launch/odometer.launch" />
+    <entry file="file://$PROJECT_DIR$/src/sendgoal.cpp" />
+    <entry file="file://$PROJECT_DIR$/include/sendgoal.h" />
+    <entry file="file://$PROJECT_DIR$/src/path_node.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ugvdriver_node.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/targetposition_node.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/targetposition.cpp" />
+    <entry file="file://$PROJECT_DIR$/include/targetposition.h" />
+    <entry file="file://$PROJECT_DIR$/include/recvtarget.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launch/goal_test.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launch/keyboardcontrol.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launch/odometry.launch">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launch/path.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="60" lean-forward="true" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launch/velodyne.launch">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sendtarget_node.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launch/ugvdriver.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/sendtarget.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/serialtransmission.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="91" column="26" selection-start-line="91" selection-start-column="23" selection-end-line="91" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/recvtarget_node.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/serialtransmission.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="87" column="12" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/recvtarget.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1254">
+          <caret line="66" column="34" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sendtarget.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launch/recvtarget.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launch/sendtarget.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launch/slam_navigation.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="931">
+          <caret line="49" column="67" selection-start-line="49" selection-start-column="67" selection-end-line="49" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/params/ugvdriver/ugvdriver_params.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coordinatetransform.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ugvdriver.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4123">
+          <caret line="217" column="6" selection-start-line="217" selection-start-column="6" selection-end-line="217" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/ugvdriver.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="60" column="14" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/coordinatetransform.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/goal_test_node.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

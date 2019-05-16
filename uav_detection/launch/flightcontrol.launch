@@ -1,0 +1,15 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+
+    <node pkg="uav_detection" type="flightcontrol_node" name="flightcontrol_node" output="screen">
+        <rosparam param="xlim">[0.0, 10.0]</rosparam>
+        <rosparam param="ylim">[-5.0, 5.0]</rosparam>
+        <param name="height" value="3.0"/>
+        <param name="xstep" value="2.0"/>
+        <param name="scanmode" value="0"/>
+        <param name="isRecordvideo" value="false"/>
+        <param name="velocity_range" value="3"/>
+        <param name="idle_velocity" value="1"/>
+    </node>
+
+</launch>

@@ -1,0 +1,187 @@
+#include "detector.h"
+
+
+namespace detector{
+
+bool Detector::init(string Config_File, string Param_File)
+{
+    // Aruco parameters
+    detectorParams = DetectorParameters::create();
+    if(!readDetectorParameters(Config_File, detectorParams))
+    {
+        cout << "failed to read configure file" << endl;
+        return false;
+    }
+
+    // Measure data
+    markerLength = 201; // uint: mm
+    Vec3d tcuav(0.10, 0, 0); // 相机坐标到无人机坐标的平移
+
+    // Initial detecter
+    int dictionaryId = DICT_5X5_50;
+    dictionary = getPredefinedDictionary(PREDEFINED_DICTIONARY_NAME(dictionaryId));
+
+    // Camera parameters
+    cameraMatrix = Mat(3, 3, CV_64FC1, Scalar::all(0));
+    distCoeffs = Mat(1, 5, CV_64FC1, Scalar::all(0));
+    Rcam2uav = Mat(3, 3, CV_64FC1, Scalar::all(0));
+    Tcam2uav = Mat(tcuav);
+    readCameraParameters(Param_File, cameraMatrix, distCoeffs);
+    //cout << "cameraMatrix:\n" << cameraMatrix << endl;
+    //cout << "distCoeffs:\n" << distCoeffs << endl;
+
+    return true;
+}
+
+void Detector::detect(Mat& img, vector<int>& ids)
+{
+    vector<vector<Point2f>> rejected;
+    detectMarkers(img, dictionary, corners, ids, detectorParams, rejected);
+    drawDetectedMarkers(img, corners, ids, Scalar(0, 0, 255));
+}
+
+void Detector::drawmarker(Mat& img, CvScalar color, int thickness)
+{
+    for(int i = 0;i < corners.size();i++)
+    {
+        vector<Point2f> corner = corners[i];
+        line(img, corner[0], corner[1], color, thickness);
+        line(img, corner[1], corner[2], color, thickness);
+        line(img, corner[2], corner[3], color, thickness);
+        line(img, corner[3], corner[0], color, thickness);
+    }
+}
+
+void Detector::locate(
+        double                      yaw,
+        double                      gimbalpitch,
+        ct::GlobalPosition&         globalpos0,
+        vector<ct::GlobalPosition>& globalpositions
+        )
+{
+    yaw = DEG2RAD(yaw);
+    gimbalpitch = -DEG2RAD(gimbalpitch);
+
+    // Estimate pose
+    vector<Vec3d> rvecs, tvecs;
+    estimatePoseSingleMarkers(corners, markerLength, cameraMatrix, distCoeffs, rvecs, tvecs);
+
+    // Calculate coordinate of target respected to UAV
+    Mat Pcam = Mat(3, 1, CV_64FC1, Scalar::all(0)); // 二维码中心点的相机坐标
+    Mat Puav = Mat(3, 1, CV_64FC1, Scalar::all(0)); // 二维码中心点的无人机坐标
+    ct::LocalPosition localpos; // 二维码中心点的局部坐标
+    ct::GlobalPosition globalpos1; // 二维码中心点的GPS坐标
+    // R = [0, -sin(theta), cos(theta); 1, 0 , 0; 0, -cos(theta), -sin(theta)]
+    Rcam2uav.at<double>(0,0) = 0;
+    Rcam2uav.at<double>(0,1) = -sin(gimbalpitch);
+    Rcam2uav.at<double>(0,2) = cos(gimbalpitch);
+    Rcam2uav.at<double>(1,0) = 1;
+    Rcam2uav.at<double>(1,1) = 0;
+    Rcam2uav.at<double>(1,2) = 0;
+    Rcam2uav.at<double>(2,0) = 0;
+    Rcam2uav.at<double>(2,1) = -cos(gimbalpitch);
+    Rcam2uav.at<double>(2,2) = -sin(gimbalpitch);
+    for(int i = 0;i < corners.size();i++)
+    {
+        Pcam = Mat(tvecs[i]) / 1000.0; // change uint from mm to m
+        Puav = Rcam2uav * Pcam + Tcam2uav;
+        localpos.x = (Puav.at<double>(0,0) * cos(yaw) - Puav.at<double>(0,1) * sin(yaw));
+        localpos.y = (Puav.at<double>(0,0) * sin(yaw) + Puav.at<double>(0,1) * cos(yaw));
+        localpos.z = Puav.at<double>(0,2);
+        ct::LocalToGlocal(localpos, globalpos0, globalpos1);
+        globalpositions.push_back(globalpos1);
+        //cout << "Pcam: " << Pcam << endl;
+        //cout << "Puav: " << Puav << endl;
+        //cout << "globalpos0: " << Mat(Vec3d(globalpos0.latitude, globalpos0.longitude, globalpos0.altitude)) << endl;
+        //cout << "globalpos1: " << Mat(Vec3d(globalpos1.latitude, globalpos1.longitude, globalpos1.altitude)) << endl;
+    }
+}
+
+template<typename T>
+void matread(
+        ifstream&	fin,
+        Mat&		mat
+        )
+{
+    int rows = mat.rows;
+    int cols = mat.cols;
+    for(int i = 0;i < rows;i++)
+    {
+        for(int j = 0;j < cols;j++)
+        {
+            fin >> mat.at<T>(i, j);
+        }
+    }
+}
+template<typename T>
+void matwrite(
+        ofstream&	fout,
+        Mat&		mat
+        )
+{
+    int rows = mat.rows;
+    int cols = mat.cols;
+    for(int i = 0;i < rows;i++)
+    {
+        for(int j = 0;j < cols;j++)
+        {
+            fout << mat.at<T>(i, j) << " ";
+        }
+        fout << endl;
+    }
+}
+
+void readCameraParameters(
+        string  filename,
+        Mat&    cameraMatrix,
+        Mat&    distCoeffs
+        )
+{
+    ifstream fin(filename);
+    string str;
+    fin >> str;
+    matread<double>(fin, cameraMatrix);
+    fin >> str;
+    matread<double>(fin, distCoeffs);
+}
+
+bool readDetectorParameters(
+        string                      filename,
+        Ptr<DetectorParameters>&    params
+        )
+{
+    FileStorage fs(filename, FileStorage::READ);
+    if(!fs.isOpened())
+    {
+        return false;
+    }
+    fs["adaptiveThreshWinSizeMin"] >> params->adaptiveThreshWinSizeMin;
+    fs["adaptiveThreshWinSizeMax"] >> params->adaptiveThreshWinSizeMax;
+    fs["adaptiveThreshWinSizeStep"] >> params->adaptiveThreshWinSizeStep;
+    fs["adaptiveThreshConstant"] >> params->adaptiveThreshConstant;
+    fs["minMarkerPerimeterRate"] >> params->minMarkerPerimeterRate;
+    fs["maxMarkerPerimeterRate"] >> params->maxMarkerPerimeterRate;
+    fs["polygonalApproxAccuracyRate"] >> params->polygonalApproxAccuracyRate;
+    fs["minCornerDistanceRate"] >> params->minCornerDistanceRate;
+    fs["minDistanceToBorder"] >> params->minDistanceToBorder;
+    fs["minMarkerDistanceRate"] >> params->minMarkerDistanceRate;
+    fs["cornerRefinementMethod"] >> params->cornerRefinementMethod;
+    fs["cornerRefinementWinSize"] >> params->cornerRefinementWinSize;
+    fs["cornerRefinementMaxIterations"] >> params->cornerRefinementMaxIterations;
+    fs["cornerRefinementMinAccuracy"] >> params->cornerRefinementMinAccuracy;
+    fs["markerBorderBits"] >> params->markerBorderBits;
+    fs["perspectiveRemovePixelPerCell"] >> params->perspectiveRemovePixelPerCell;
+    fs["perspectiveRemoveIgnoredMarginPerCell"] >> params->perspectiveRemoveIgnoredMarginPerCell;
+    fs["maxErroneousBitsInBorderRate"] >> params->maxErroneousBitsInBorderRate;
+    fs["minOtsuStdDev"] >> params->minOtsuStdDev;
+    fs["errorCorrectionRate"] >> params->errorCorrectionRate;
+
+    return true;
+}
+
+
+};
+
+
+
+

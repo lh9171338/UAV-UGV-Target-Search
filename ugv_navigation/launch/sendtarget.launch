@@ -1,0 +1,12 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+
+    <arg name="serial_port" default="/dev/ttyUSB0"/>
+    <arg name="serial_baudrate" default="115200"/>
+
+    <node pkg="ugv_navigation" type="sendtarget_node" name="sendtarget_node" output="screen">
+        <param name="serial_port" value="$(arg serial_port)"/>
+        <param name="serial_baudrate" value="$(arg serial_baudrate)"/>
+    </node>
+
+</launch>

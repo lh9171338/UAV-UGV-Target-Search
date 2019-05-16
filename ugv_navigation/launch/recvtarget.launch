@@ -1,0 +1,18 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+
+    <arg name="serial_port" default="/dev/ttyUSB0"/>
+    <arg name="serial_baudrate" default="115200"/>
+    <arg name="fix_frame" default="map"/>
+    <arg name="executetime" default="100"/>
+    <arg name="sleeptime" default="5"/>
+
+    <node pkg="ugv_navigation" type="recvtarget_node" name="recvtarget_node" output="screen">
+        <param name="serial_port" value="$(arg serial_port)"/>
+        <param name="serial_baudrate" value="$(arg serial_baudrate)"/>
+        <param name="fix_frame" value="$(arg fix_frame)"/>
+        <param name="executetime" value="$(arg executetime)"/>
+        <param name="sleeptime" value="$(arg sleeptime)"/>
+    </node>
+
+</launch>

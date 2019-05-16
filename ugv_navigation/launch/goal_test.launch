@@ -1,0 +1,16 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+
+    <node pkg="ugv_navigation" type="goal_test_node" name="goal_test_node" required="true" output="screen">
+        <param name="fix_frame" value="map"/>
+        <param name="executetime" value="100"/>
+        <param name="sleeptime" value="5"/>
+        <param name="num_target" value="5"/>
+        <rosparam param="P1">[1.0, 1.0, 1.57]</rosparam>
+        <rosparam param="P2">[1.0, 1.0, 1.57]</rosparam>
+        <rosparam param="P3">[1.0, 1.0, 1.57]</rosparam>
+        <rosparam param="P4">[1.0, 1.0, 1.57]</rosparam>
+        <rosparam param="P5">[1.0, 1.0, 1.57]</rosparam>
+    </node>
+
+</launch>

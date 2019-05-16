@@ -1,0 +1,4 @@
+imu_accel_range: 16 # -16~+16 g
+imu_gyro_range: 2000 # -2000~+2000 degree/s
+
+

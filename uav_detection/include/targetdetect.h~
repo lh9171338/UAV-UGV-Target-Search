@@ -1,0 +1,71 @@
+#ifndef __TARGETDETECT_H
+#define __TARGETDETECT_H
+
+#include <ros/ros.h>
+#include <dji_sdk/dji_drone.h>
+#include <tf/tf.h>
+#include <std_msgs/Int8.h>
+#include "camera.h"
+#include "coordinatetransform.h"
+#include "detector.h"
+#include "serialtransmission.h"
+
+#define TAG_NUM 36
+
+
+namespace target_detect{
+
+enum FlightState{
+    S_NONE = 0,
+    S_PREPARE , // Set gimbal
+    S_TAKEOFF, // Take off
+    S_SCAN, // Scan and detect target
+    S_GOHOME, // Go home
+    S_ENDING // Wait for ending
+};
+
+class TargetDetect
+{
+public:
+    // Interface function
+    bool setup(ros::NodeHandle& nh, ros::NodeHandle& nh_priv);
+    void spin();
+
+private:
+    // Call back
+    void GlobalPositionCallback(const dji_sdk::GlobalPosition& msg);
+    void AttitudeQuaternionCallback(const dji_sdk::AttitudeQuaternion& msg);
+    void FlightStateCallback(const std_msgs::Int8& msg);
+
+    void ProcessPositionData();
+    void SendPositionData();
+
+private:
+    // Object
+    ros::Subscriber globalposition_sub;
+		ros::Subscriber attitudequaternion_sub;
+    ros::Subscriber state_sub;
+    ct::GlobalPosition globalpos;
+		
+    FlightState state;
+
+    camera::Camera camera;
+    detector::Detector detector;
+    serial_transmission::SerialConfig serialconfig;
+    serial_transmission::SerialTransmission serialtransmission;
+    std::vector<int> ids;
+    std::vector<ct::GlobalPosition> globalpositions;
+
+
+    // Parameters
+    std::string Config_File;
+    std::string Param_File;
+    std::string Video_SaveFile;
+    bool showimage;
+    bool showresult;
+    bool savevedio;
+};
+
+}
+
+#endif // __TARGETDETECT_H

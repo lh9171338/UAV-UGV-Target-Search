@@ -1,0 +1,14 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+
+    <arg name="l_scale" default="0.5" />
+    <arg name="a_scale" default="0.5" />
+    <arg name="rate" default="10" />
+
+    <node pkg="ugv_navigation" type="keyboardcontrol_node" name="keyboardcontrol_node" output="screen">
+        <param name="l_scale" value="$(arg l_scale)" />
+        <param name="a_scale" value="$(arg a_scale)" />
+        <param name="rate" value="$(arg rate)" />
+    </node>
+
+</launch>

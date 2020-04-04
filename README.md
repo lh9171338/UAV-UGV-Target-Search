@@ -7,7 +7,7 @@
 - ROS-based target search of UAV
 
 # 3. Video
->>[Download link](https://raw.githubusercontent.com/lh9171338/UAV-UGV-Target-Search/master/video/uav_ugv_word.avi)
+>>[Download Link](https://raw.githubusercontent.com/lh9171338/UAV-UGV-Target-Search/master/video/uav_ugv_word.avi)
 
 # 4. More Resources
-- [Github link](https://github.com/lh9171338/Outline)
+- [Github Link](https://github.com/lh9171338/Outline)
